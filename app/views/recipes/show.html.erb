@@ -1,0 +1,22 @@
+<div class="tiles_container" id="content" >
+  <p id="notice"><%= notice %></p>
+
+  <p>
+  <h1><%= @recipe.title %></h1>
+  </p>
+  <% if Rails.application.assets.find_asset ("#{@recipe.id}.jpg") %>
+      <%= image_tag "#{@recipe.id}.jpg", width:260 ,height:200 %>
+  <% else %>
+      <%= image_tag "0.jpg", width:260, height:200 %>
+  <% end %>
+  <p>
+  <h1>Przygotowanie:</h1>
+  <%= @recipe.body %>
+
+  </p>
+  <div class="fb-comments" data-href="http://localhost:3000/recipes" data-numposts="5" data-colorscheme="light"></div>
+
+
+
+</div>
+

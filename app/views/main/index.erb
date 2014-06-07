@@ -1,0 +1,23 @@
+<div class="tiles_container" id="content" >
+
+  <% @recent_recipes.each do |recipe| %>
+      <div class="tile">
+        <% if Rails.application.assets.find_asset ("#{recipe.id}.jpg") %>
+            <%= image_tag "#{recipe.id}.jpg", width:260 ,height:200 %>
+        <% else %>
+            <%= image_tag "0.jpg", width:260, height:200 %>
+        <% end %>
+        <h2><%= link_to "#{recipe.title}", recipe %></h2>
+        <!--<img src="/content/img/news/big/575.jpg" style="width:310px; height: 220px;" />-->
+
+
+        <div class="post-meta" style="font-size: 12px;">
+        </div>
+        <%= recipe.body %>
+
+      </div>
+  <% end %>
+
+
+
+</div>

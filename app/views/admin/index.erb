@@ -1,0 +1,29 @@
+<div class="tiles_container" id="content" >
+  <h1>Listing recipes</h1>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Nazwa</th>
+      <th>Opis</th>
+      <th colspan="3"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @recipes.each do |recipe| %>
+        <tr>
+          <td><%= recipe.title %></td>
+          <td><%= recipe.body %></td>
+          <td><%= link_to 'Show', recipe %></td>
+          <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+          <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <br>
+
+        <% end %>
+        <%= link_to 'New Recipe', new_recipe_path %>
+</div>

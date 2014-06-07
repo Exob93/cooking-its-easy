@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PrzepisPl</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application.js' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="fb-root"></div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<nav>
+  <ul>
+    <li class="selected"><%= link_to "Start", root_path %></li>
+    <li><%= link_to "Recipes", recipes_path %></li>
+    <!--<li>%= link_to "Produkty", produkty_path %></li>
+    <li>%= link_to "Przyprawy", przyprawy_path %>></li>-->
+    <div class="top-search">
+      <form method="post" id="searchform" action="/main/szukaj">
+        <div>
+          <input type="text" value="Szukaj..." name="s" id="s" onfocus="defaultInput(this)" onblur="clearInput(this)" />
+          <input type="submit" id="searchsubmit" value=" " />
+        </div>
+      </form>
+    </div>
+  </ul>
+</nav>
+<br />
+<section id="intro">
+  <header>
+    <h2>Prosta strona o gotowaniu</h2>
+    <br />
+
+    <p>Opis</p>
+  </header>
+
+  <%= image_tag "introimage.png" %>
+</section>
+<%= yield %>
+
+<aside>
+ <section>
+
+ </section>
+
+  <section>
+    <header>
+      <h3>Miejsce na reklame</h3>
+    </header>
+    <%= image_tag "ad125.jpg", :alt => "ad" %> <%= image_tag "ad125.jpg", :alt => "ad" %> <br />
+    <%= image_tag "ad125.jpg", alt: "ad" %> <%= image_tag "ad125.jpg", alt: "ad" %> <br /> <br />
+  </section>
+
+  <section>
+    <header>
+      <div class="fb-like-box" data-href="https://www.facebook.com/HatakPL?fref=ts" data-width="260" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true" ></div>
+    </header>
+    <ul>
+    </ul>
+  </section>
+</aside>
+<footer>
+  <br />
+  <p>&copy; 2010 <a href="#" title="your site name">yoursite.com</a></p>
+</footer>
+<!-- Free template created by http://freehtml5templates.com -->
+
+</body>
+</html>
